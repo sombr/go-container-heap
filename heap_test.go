@@ -98,7 +98,7 @@ func benchmarkTopN(topn int, maxsize int, b *testing.B) {
 			if hq.size >= topn {
 				hq.Pop()
 			}
-			hq.Push(-arr[idx])
+			hq.Push(arr[idx])
 		}
 		for idx := 0; idx < topn; idx++ {
 			hq.Pop()

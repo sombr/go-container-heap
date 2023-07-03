@@ -7,10 +7,13 @@ import (
 // return true is a < b
 type Comparator[T any] func(a *T, b *T) bool
 
-type Heap[T any] struct {
+type Heap[T any] struct { // accept Any type into the queue
+	// compare two elements of type T and return true if first is smaller
 	comparator Comparator[T]
-	size       int
-	data       []T
+	// number of elements in the priority queue
+	size int
+	// memory buffer of fixed capacity for storing the binary tree of items
+	data []T
 }
 
 func NewHeap[T any](capacity int, comparator Comparator[T]) *Heap[T] {
