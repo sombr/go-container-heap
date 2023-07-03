@@ -83,6 +83,10 @@ func (q *Heap[T]) Peek() (res T, err error) {
 	return res, nil
 }
 
+func (q *Heap[T]) Size() int {
+	return q.size
+}
+
 func (q *Heap[T]) percolate(pos int) {
 	if q.isLeaf(pos) {
 		return
